@@ -22,23 +22,29 @@
             android:textColor="@color/white"
             android:layout_weight="1"
             android:paddingRight="30dp"
-            android:text="2+3"
+            android:text=""
             android:layout_gravity="end"
             android:gravity="center"
             android:textSize="30sp"
             android:id="@+id/workingsTextView"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:paddingRight="30dp"
-            android:gravity="center"
+            android:gravity="right"
             android:textColor="@color/white"
-            android:text="5"
-            android:layout_gravity="end"
+            android:text="0"
             android:textSize="45sp"
-            android:id="@+id/resultTextView"/>
+            android:layout_gravity="end"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="45sp"
+            android:autoSizeStepGranularity="1sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -58,28 +64,24 @@
                 android:layout_weight="1"
                 android:background="@color/red"
                 android:textColor="@color/white"
-                android:text="C"/>
+                android:text="C"
+                android:onClick="clear"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="()"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@null"
-                android:textColor="@color/white"
-                android:text="^"/>
+                android:text="^"
+                android:onClick="handleOperationClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/orange"
-                android:text="/"/>
+                android:text="/"
+                android:onClick="handleOperationClick"/>
         </LinearLayout>
 
         <LinearLayout
@@ -93,28 +95,32 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="7"/>
+                android:text="7"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="8"/>
+                android:text="8"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="9"/>
+                android:text="9"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/orange"
-                android:text="x"/>
+                android:text="x"
+                android:onClick="handleOperationClick"/>
         </LinearLayout>
 
         <LinearLayout
@@ -128,28 +134,32 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="4"/>
+                android:text="4"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="5"/>
+                android:text="5"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="6"/>
+                android:text="6"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/orange"
-                android:text="-"/>
+                android:text="-"
+                android:onClick="handleOperationClick"/>
         </LinearLayout>
 
         <LinearLayout
@@ -163,28 +173,32 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="1"/>
+                android:text="1"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="2"/>
+                android:text="2"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="3"/>
+                android:text="3"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/orange"
-                android:text="+"/>
+                android:text="+"
+                android:onClick="handleOperationClick"/>
         </LinearLayout>
 
         <LinearLayout
@@ -205,7 +219,8 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/white"
-                android:text="0"/>
+                android:text="0"
+                android:onClick="numberClick"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -213,7 +228,8 @@
                 android:textSize="42sp"
                 android:background="@color/orange"
                 android:textColor="@color/white"
-                android:text="="/>
+                android:text="="
+                android:onClick="handleEquals"/>
         </LinearLayout>
     </LinearLayout>
 
