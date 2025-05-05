@@ -1,69 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/fullName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ПІП"
-        android:inputType="textPersonName"/>
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Вік"
-        android:inputType="number"/>
-
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Рівень ЗП"
-            android:textSize="16sp"
-            android:layout_margin="8dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/salaryValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="50$"
-            android:textSize="16sp"
-            android:layout_margin="8dp"/>
-
-        <SeekBar
-            android:id="@+id/salarySeekBar"
+        <EditText
+            android:id="@+id/fullName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="ПІП"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Вік"
+            android:inputType="number"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Рівень ЗП"
+                android:textSize="16sp"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/salaryValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50$"
+                android:textSize="16sp"
+                android:layout_margin="8dp"/>
+
+            <SeekBar
+                android:id="@+id/salarySeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questionsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/experienceCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Досвід роботи від 2-х років"/>
+
+        <CheckBox
+            android:id="@+id/teamworkSkillCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Навички командної розобки"/>
+
+        <CheckBox
+            android:id="@+id/readyForTravelCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Готовність до відряджень"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Надіслати"
+            android:onClick="submitAnswers"
+            />
+
+        <LinearLayout
+            android:id="@+id/summaryLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Ви пройшли відбір!"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Телефон компанії: +380923525"/>
+        </LinearLayout>
     </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/experienceCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Досвід роботи від 2-х років"/>
-
-    <CheckBox
-        android:id="@+id/teamworkSkillCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Навички командної розобки"/>
-
-    <CheckBox
-        android:id="@+id/readyForTravelCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Готовність до відряджень"/>
-</LinearLayout>
+</ScrollView>
