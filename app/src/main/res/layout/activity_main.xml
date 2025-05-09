@@ -14,8 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-        app:title="Список авто"
-        app:menu="@menu/main_menu"/>
+        app:title="Список авто"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

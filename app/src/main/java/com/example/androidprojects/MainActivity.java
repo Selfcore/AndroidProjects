@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidprojects.Models.Car;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private List<Car> cars;
 
+    private ActivityResultLauncher<Intent> searchActivityLauncher;
     private RecyclerView recyclerView;
     private CarAdapter carAdapter;
 
@@ -36,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         CarRepository carRepository = (CarRepository) getApplication();
 
@@ -52,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
 
         carAdapter = new CarAdapter(this, cars);
         recyclerView.setAdapter(carAdapter);
+
+        searchActivityLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        ArrayList<Car> filteredCars = result.getData().getParcelableArrayListExtra("filteredCars");
+                        carAdapter.updateList(filteredCars);
+                    }
+                }
+        );
     }
 
     @Override
@@ -64,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
             Intent intent = new Intent(this, SearchActivity.class);
-            startActivityForResult(intent, 1);
+            searchActivityLauncher.launch(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
