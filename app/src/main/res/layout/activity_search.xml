@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <AutoCompleteTextView
+        android:id="@+id/inputBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Марка авто"
+        android:inputType="text"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/inputModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Модель авто"
+        android:inputType="text"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inputYearFrom"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Рік від"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/inputYearTo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Рік до"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inputCostFrom"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ціна від"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/inputCostTo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ціна до"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Знайти"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
